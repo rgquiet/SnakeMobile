@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { TextInput } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { updateAll } from '../store/PlayerAction';
 import { postJoinGame } from '../helpers/Backend';
-import JoinDTO from "../helpers/JoinDTO";
+import JoinDTO from '../helpers/JoinDTO';
 import UserNameScreen from './UserNameScreen';
 import Screens from './Screens';
 import Styles from '../styles/Global';
 
 const JoinGameScreen = (props) => {
+    const dispatch = useDispatch();
     const [lobbyCode, setLobbyCode] = useState('');
-
     const onChangeInput = (update) => {
         setLobbyCode(update);
     }
@@ -17,6 +19,7 @@ const JoinGameScreen = (props) => {
         let joinDTO = new JoinDTO(userName, lobbyCode);
         postJoinGame(joinDTO).then(data => {
             if(data === joinDTO.lobbyCode) {
+                dispatch(updateAll(joinDTO));
                 props.screenHandler(Screens.WAIT_GAME, data);
             } else {
                 // wip: Go to start screen (wrong lobby code)
