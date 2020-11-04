@@ -11,7 +11,7 @@ const UserNameScreen = (props) => {
 
     return(
         <View style={[Styles.mainView, {justifyContent: 'center'}]}>
-            { props.children }
+            {props.children}
             <View style={{flexDirection: 'row'}}>
                 <TouchableOpacity
                     style={Styles.mainButton}
@@ -27,7 +27,7 @@ const UserNameScreen = (props) => {
                 />
             </View>
             <TouchableOpacity
-                style={[Styles.mainButton, Styles.backButton]}
+                style={[Styles.mainButton, Styles.leftCorner]}
                 onPress={() => props.screenHandler()}
             >
                 <Text style={Styles.mainButtonText}>back</Text>

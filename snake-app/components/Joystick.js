@@ -4,18 +4,19 @@ import { MultiTouchView } from 'expo-multi-touch';
 import Pad from './Pad';
 
 export default class Joystick extends Component {
+    firstTouchStart = {x: 0, y: 0};
+    firstTouchPosition = {x: 0, y: 0};
+    firstTouchForce = 0;
+
     state = {
         touches: {},
         show: false,
         direction: ''
     };
-    firstTouchStart = { x: 0, y: 0 };
-    firstTouchPosition = { x: 0, y: 0 };
-    firstTouchForce = 0;
 
     touchProps = {
         onTouchBegan: (event) => {
-            const { identifier } = event;
+            const {identifier} = event;
             this.setState((previous) => ({
                 touches: {
                     ...previous.touches,
@@ -29,7 +30,7 @@ export default class Joystick extends Component {
             }
         },
         onTouchMoved: (event) => {
-            const { identifier } = event;
+            const {identifier} = event;
             this.setState((previous) => ({
                 touches: {
                     ...previous.touches,
@@ -52,7 +53,7 @@ export default class Joystick extends Component {
     };
 
     onTouchOverHandler(event) {
-        const { identifier } = event;
+        const {identifier} = event;
         this.setState((previous) => ({
             touches: {
                 ...previous.touches,
@@ -79,7 +80,7 @@ export default class Joystick extends Component {
     }
 
     render() {
-        const { touches, show } = this.state;
+        const {touches, show} = this.state;
         const firstTouch = touches[0];
 
         if(firstTouch && firstTouch.initialTouch) {
@@ -97,7 +98,7 @@ export default class Joystick extends Component {
         return (
             <MultiTouchView style={{flex: 1}} {...this.touchProps}>
                 <View style={styles.container}>
-                    { this.props.children }
+                    {this.props.children}
                     <Pad
                         visible={show}
                         center={this.firstTouchStart}

@@ -10,10 +10,11 @@ import Styles from '../styles/Global';
 
 const NewGameScreen = (props) => {
     const dispatch = useDispatch();
+
     const onCheckClick = (userName) => {
         postNewGame(userName).then(data => {
             dispatch(updateAll(new JoinDTO(userName, data)));
-            props.screenHandler(Screens.WAIT_GAME, data);
+            props.screenHandler(Screens.WAIT_GAME, {lobbyCode: data, host: true});
         });
     }
 

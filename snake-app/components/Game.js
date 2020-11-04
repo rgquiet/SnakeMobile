@@ -5,10 +5,18 @@ const COLS = 8;
 const ROWS = 5;
 const WIDTH = Dimensions.get('window').width / COLS;
 const HEIGHT = Dimensions.get('window').height / ROWS;
+
+/* wip... */
 const Game = () => {
     const [state, setState] = useState({
         images: initState()
     });
+
+    const updateState = (update) => {
+        setState({
+            images: update
+        });
+    }
 
     function initState() {
         let arr = [];
@@ -16,12 +24,6 @@ const Game = () => {
             arr.push({key: i, path: require('../assets/dummy.png')});
         }
         return arr;
-    }
-
-    const updateState = (update) => {
-        setState({
-            images: update
-        });
     }
 
     return (

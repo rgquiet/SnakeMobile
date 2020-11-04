@@ -5,25 +5,27 @@ import PropTypes from 'prop-types';
 const PAD_RADIUS = 50;
 const THUMB_RADIUS = 25;
 const radiansBetweenPoints = (p1, p2) => Math.atan2(p2.y - p1.y, p2.x - p1.x);
-const vectorSize = ({ x, y }) => Math.sqrt(x * x + y * y);
-const transformPosition = ({ angle, distance }) => ({
+const vectorSize = ({x, y}) => Math.sqrt(x * x + y * y);
+const transformPosition = ({angle, distance}) => ({
     x: Math.cos(angle) * distance,
     y: Math.sin(angle) * distance,
 });
 
 export default class Pad extends Component {
+    animatedValue = new Animated.Value(0);
+    angle = 0;
+    speed = 0;
+
     static propTypes = {
         visible: PropTypes.bool,
         center: PropTypes.object,
         touchPosition: PropTypes.object,
         force: PropTypes.number,
     };
-    animatedValue = new Animated.Value(0);
-    angle = 0;
-    speed = 0;
 
-    componentWillReceiveProps({ visible }) {
-        const { props } = this;
+    componentWillReceiveProps({visible}) {
+        // wip: Don't use componentWillReceiveProps
+        const {props} = this;
         if(props.visible !== visible) {
             this.visible = visible;
         }
@@ -42,7 +44,7 @@ export default class Pad extends Component {
     }
 
     get positionStyle() {
-        const { center } = this.props;
+        const {center} = this.props;
         return {
             top: center.y - PAD_RADIUS,
             left: center.x - PAD_RADIUS,
@@ -52,7 +54,7 @@ export default class Pad extends Component {
     get animatedStyle() {
         const scale = this.animatedValue;
         return {
-            transform: [{ scale }],
+            transform: [{scale}],
         };
     }
 
@@ -61,7 +63,7 @@ export default class Pad extends Component {
     }
 
     get normalizedTouch() {
-        const { center, touchPosition } = this.props;
+        const {center, touchPosition} = this.props;
         return {
             x: center.x - touchPosition.x,
             y: center.y - touchPosition.y,
@@ -69,11 +71,11 @@ export default class Pad extends Component {
     }
 
     get thumbPositionStyle() {
-        const { center, touchPosition, force } = this.props;
-        const { normalizedTouch } = this;
+        const {center, touchPosition, force} = this.props;
+        const {normalizedTouch} = this;
         const distance = Math.min(PAD_RADIUS, vectorSize(normalizedTouch));
         const angle = radiansBetweenPoints(center, touchPosition);
-        const position = transformPosition({ angle, distance });
+        const position = transformPosition({angle, distance});
 
         this.angle = angle;
         this.speed = distance / PAD_RADIUS;
@@ -81,7 +83,7 @@ export default class Pad extends Component {
         return {
             top: PAD_RADIUS + position.y - THUMB_RADIUS,
             left: PAD_RADIUS + position.x - THUMB_RADIUS,
-            transform: [{ scale: 1 + (force || 0) * 0.5 }],
+            transform: [{scale: 1 + (force || 0) * 0.5}],
         };
     }
 
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
     container: {
         shadowColor: 'black',
         shadowRadius: 2,
-        shadowOffset: { width: 0, height: 0 },
+        shadowOffset: {width: 0, height: 0},
         shadowOpacity: 0.5,
 
         position: 'absolute',

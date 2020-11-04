@@ -11,18 +11,21 @@ import Styles from '../styles/Global';
 const JoinGameScreen = (props) => {
     const dispatch = useDispatch();
     const [lobbyCode, setLobbyCode] = useState('');
+
     const onChangeInput = (update) => {
         setLobbyCode(update);
     }
 
     const onCheckClick = (userName) => {
         let joinDTO = new JoinDTO(userName, lobbyCode);
-        postJoinGame(joinDTO).then(data => {
-            if(data === joinDTO.lobbyCode) {
+        postJoinGame(joinDTO).then(status => {
+            if(status === 200) {
                 dispatch(updateAll(joinDTO));
-                props.screenHandler(Screens.WAIT_GAME, data);
+                props.screenHandler(Screens.WAIT_GAME, {lobbyCode: lobbyCode, host: false});
+            } else if (status === 400) {
+                // wip: Show alert
+                console.log('no lobby with this code');
             } else {
-                // wip: Go to start screen (wrong lobby code)
                 props.screenHandler();
             }
         });

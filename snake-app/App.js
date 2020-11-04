@@ -17,16 +17,17 @@ const store = createStore(rootReducer);
 export default class App extends Component {
     onChangeScreenHandler = (screen, data) => {
         if(screen === Screens.NEW_GAME) {
-            this.setState({ screen: <NewGameScreen screenHandler={this.onChangeScreenHandler}/> });
+            this.setState({screen: <NewGameScreen screenHandler={this.onChangeScreenHandler}/>});
         } else if(screen === Screens.JOIN_GAME) {
             this.setState({screen: <JoinGameScreen screenHandler={this.onChangeScreenHandler}/>});
         } else if(screen === Screens.WAIT_GAME) {
             this.setState({screen: <WaitGameScreen
                 screenHandler={this.onChangeScreenHandler}
-                lobbyCode={data}
+                lobbyCode={data.lobbyCode}
+                host={data.host}
             />});
         } else {
-            this.setState({ screen: <StartScreen screenHandler={this.onChangeScreenHandler}/> });
+            this.setState({screen: <StartScreen screenHandler={this.onChangeScreenHandler}/>});
         }
     }
 
@@ -35,7 +36,7 @@ export default class App extends Component {
     }
 
     render() {
-        const { screen } = this.state;
+        const {screen} = this.state;
         return (
             <Provider store={store}>
                 <View style={{flex: 1}}>

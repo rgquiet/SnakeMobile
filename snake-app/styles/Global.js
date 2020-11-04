@@ -31,10 +31,16 @@ export default StyleSheet.create({
         color: Colors.FONT_COLOR,
         paddingHorizontal: 15
     },
-    backButton: {
+    leftCorner: {
         position: 'absolute',
         bottom: 0,
         left: 0,
+        marginBottom: 25
+    },
+    rightCorner: {
+        position: 'absolute',
+        bottom: 0,
+        right: 0,
         marginBottom: 25
     }
 });
