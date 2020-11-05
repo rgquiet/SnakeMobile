@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class JoinDTO {
+public class LobbyDTO {
     private String userName;
     private String lobbyCode;
 }

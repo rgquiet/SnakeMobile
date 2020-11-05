@@ -3,7 +3,7 @@ import { TextInput } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { updateAll } from '../store/PlayerAction';
 import { postJoinGame } from '../helpers/Backend';
-import JoinDTO from '../helpers/JoinDTO';
+import LobbyDTO from '../helpers/LobbyDTO';
 import UserNameScreen from './UserNameScreen';
 import Screens from './Screens';
 import Styles from '../styles/Global';
@@ -17,14 +17,17 @@ const JoinGameScreen = (props) => {
     }
 
     const onCheckClick = (userName) => {
-        let joinDTO = new JoinDTO(userName, lobbyCode);
-        postJoinGame(joinDTO).then(status => {
+        let lobbyDTO = new LobbyDTO(userName, lobbyCode);
+        postJoinGame(lobbyDTO).then(status => {
             if(status === 200) {
-                dispatch(updateAll(joinDTO));
+                dispatch(updateAll(lobbyDTO));
                 props.screenHandler(Screens.WAIT_GAME, {lobbyCode: lobbyCode, host: false});
-            } else if (status === 400) {
+            } else if(status === 400) {
                 // wip: Show alert
-                console.log('no lobby with this code');
+                console.log('invalid lobby code');
+            } else if(status === 403) {
+                // wip: Show alert
+                console.log('username already taken')
             } else {
                 props.screenHandler();
             }

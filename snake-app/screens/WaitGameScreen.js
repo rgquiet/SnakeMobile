@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react';
 import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { useDispatch, useStore } from 'react-redux';
+import { cleanAll } from '../store/PlayerAction';
+import { postLeaveGame, URL } from '../helpers/Backend';
 import RNEventSource from 'react-native-event-source';
-import { URL } from '../helpers/Backend';
 import Styles from '../styles/Global';
 
 const WaitGameScreen = (props) => {
+    const dispatch = useDispatch();
+    const store = useStore();
+
     useEffect(() => {
         // componentDidMount
         let sse = new RNEventSource(URL + '/sub/' + props.lobbyCode);
@@ -23,9 +28,13 @@ const WaitGameScreen = (props) => {
         if(props.host) {
             // wip: Close lobby
         } else {
-            // wip: SSE player left
+            postLeaveGame(store.getState().player).then(status => {
+                if(status === 200) {
+                    dispatch(cleanAll());
+                    props.screenHandler();
+                }
+            });
         }
-        props.screenHandler();
     }
 
     const onStartClick = () => {

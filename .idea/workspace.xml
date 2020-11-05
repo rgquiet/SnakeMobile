@@ -14,52 +14,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67629417-2034-41ce-8d1d-517a5dbd7c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_52_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_0_9_12_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_10_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_3_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_synchronoss_cloud_nio_multipart_parser_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_synchronoss_cloud_nio_stream_storage_1_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/LobbyEventPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/EventService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/GameService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/EventType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/LobbyEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_4_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_3_4_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_2_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Lobby.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/.expo/packager-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/components/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/components/Game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/components/Joystick.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/components/Joystick.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/components/Pad.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/components/Pad.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/helpers/Backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/helpers/Backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/helpers/JoinDTO.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/helpers/LobbyDTO.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/screens/JoinGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/JoinGameScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/screens/NewGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/NewGameScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/screens/UserNameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/UserNameScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/screens/WaitGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/WaitGameScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/store/PlayerAction.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/store/PlayerAction.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/styles/Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/styles/Global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/store/PlayerReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/store/PlayerReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/dto/JoinDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/dto/LobbyDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/EventType.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/EventType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -160,7 +130,8 @@
     </ignored-roots>
     <MESSAGE value="Adding components, helpers, screens, styles" />
     <MESSAGE value="Adding react-redux to storing user data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding react-redux to storing user data" />
+    <MESSAGE value="SSE implemented for back and front end" />
+    <option name="LAST_COMMIT_MESSAGE" value="SSE implemented for back and front end" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="0" key="#Project_Structure" timestamp="1603921985473">
@@ -171,10 +142,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1603922163125" />
-    <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1604509766635">
+    <state x="93" y="93" width="1095" height="495" key="DiffContextDialog" timestamp="1604591151308">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="93" y="93" width="1095" height="495" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1604509766635" />
+    <state x="93" y="93" width="1095" height="495" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1604591151308" />
     <state x="316" y="58" key="FileChooserDialogImpl" timestamp="1603923217577">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -187,38 +158,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="316" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1604077815362" />
-    <state width="1237" height="170" key="GridCell.Tab.0.bottom" timestamp="1604523176424">
+    <state width="1237" height="170" key="GridCell.Tab.0.bottom" timestamp="1604594419034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604523176424" />
-    <state width="1237" height="170" key="GridCell.Tab.0.center" timestamp="1604523176424">
+    <state width="1237" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604594419034" />
+    <state width="1237" height="170" key="GridCell.Tab.0.center" timestamp="1604594419034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604523176424" />
-    <state width="1237" height="170" key="GridCell.Tab.0.left" timestamp="1604523176423">
+    <state width="1237" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604594419034" />
+    <state width="1237" height="170" key="GridCell.Tab.0.left" timestamp="1604594419034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604523176423" />
-    <state width="1237" height="170" key="GridCell.Tab.0.right" timestamp="1604523176424">
+    <state width="1237" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604594419034" />
+    <state width="1237" height="170" key="GridCell.Tab.0.right" timestamp="1604594419034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604523176424" />
-    <state width="1237" height="170" key="GridCell.Tab.1.bottom" timestamp="1604523176424">
+    <state width="1237" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604594419034" />
+    <state width="1237" height="170" key="GridCell.Tab.1.bottom" timestamp="1604594419035">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604523176424" />
-    <state width="1237" height="170" key="GridCell.Tab.1.center" timestamp="1604523176424">
+    <state width="1237" height="170" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604594419035" />
+    <state width="1237" height="170" key="GridCell.Tab.1.center" timestamp="1604594419034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604523176424" />
-    <state width="1237" height="170" key="GridCell.Tab.1.left" timestamp="1604523176424">
+    <state width="1237" height="170" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604594419034" />
+    <state width="1237" height="170" key="GridCell.Tab.1.left" timestamp="1604594419034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604523176424" />
-    <state width="1237" height="170" key="GridCell.Tab.1.right" timestamp="1604523176424">
+    <state width="1237" height="170" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604594419034" />
+    <state width="1237" height="170" key="GridCell.Tab.1.right" timestamp="1604594419034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604523176424" />
+    <state width="1237" height="170" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604594419034" />
     <state x="315" y="45" width="677" height="590" key="NewModule_or_Project.wizard" timestamp="1603923233317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -227,14 +198,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604076821627" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1604500938261">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1604523392057">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604500938261" />
-    <state x="348" y="73" width="778" height="534" key="find.popup" timestamp="1604523163629">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604523392057" />
+    <state x="271" y="23" width="778" height="592" key="find.popup" timestamp="1604596870846">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="348" y="73" width="778" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1604523163629" />
+    <state x="271" y="23" width="778" height="592" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1604596870846" />
     <state x="306" y="0" key="new project wizard" timestamp="1603923207626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

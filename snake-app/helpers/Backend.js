@@ -11,14 +11,29 @@ export async function postNewGame(userName) {
     }
 }
 
-export async function postJoinGame(joinDTO) {
+export async function postJoinGame(lobbyDTO) {
     try {
         let response = await fetch(URL + '/join', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(joinDTO)
+            body: JSON.stringify(lobbyDTO)
+        });
+        return response.status;
+    } catch(e) {
+        console.error(e);
+    }
+}
+
+export async function postLeaveGame(lobbyDTO) {
+    try {
+        let response = await fetch(URL + '/leave', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(lobbyDTO)
         });
         return response.status;
     } catch(e) {
