@@ -1,8 +1,7 @@
 package com.rgq.backend.service;
 
-import com.rgq.backend.memory.Direction;
+import com.rgq.backend.config.PlayerInitializer;
 import com.rgq.backend.memory.Lobby;
-import com.rgq.backend.memory.Player;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +10,11 @@ import java.util.HashMap;
 @Getter
 @Service
 public class GameService {
+    private final PlayerInitializer playerInitializer;
     private final HashMap<String, Lobby> lobbies;
 
-    GameService() {
+    GameService(PlayerInitializer playerInitializer) {
+        this.playerInitializer = playerInitializer;
         this.lobbies = new HashMap<>();
     }
 
@@ -31,7 +32,7 @@ public class GameService {
             lobbyCode = generated.toString();
             Lobby lobby = lobbies.get(lobbyCode);
             if(lobby == null) {
-                lobbies.put(lobbyCode, new Lobby(new Player(userName, Direction.LEFT)));
+                lobbies.put(lobbyCode, new Lobby(playerInitializer, userName));
                 unique = true;
             }
         }

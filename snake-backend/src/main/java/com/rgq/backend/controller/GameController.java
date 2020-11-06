@@ -2,9 +2,8 @@ package com.rgq.backend.controller;
 
 import com.rgq.backend.config.LobbyEventPublisher;
 import com.rgq.backend.dto.LobbyDTO;
-import com.rgq.backend.memory.Direction;
+import com.rgq.backend.dto.PlayerDTO;
 import com.rgq.backend.memory.Lobby;
-import com.rgq.backend.memory.Player;
 import com.rgq.backend.service.EventService;
 import com.rgq.backend.service.GameService;
 import com.rgq.backend.sse.EventType;
@@ -15,6 +14,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
+
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api/game")
@@ -43,18 +44,16 @@ public class GameController {
     public ResponseEntity<String> joinGame(@RequestBody LobbyDTO dto) {
         Lobby lobby = gameService.getLobbies().get(dto.getLobbyCode());
         if(lobby != null) {
-            // wip: Set direction individually for each player
-            boolean created = lobby.addPlayer(new Player(dto.getUserName(), Direction.RIGHT));
-            if(created) {
+            String message = lobby.addPlayer(dto.getUserName());
+            if(message.equals("")) {
                 eventService.getPublishers()
                     .get(dto.getLobbyCode())
                     .publishEvent(new LobbyEvent(
-                        EventType.JOIN,
-                        dto.getUserName()
+                        EventType.WAIT, null
                     ));
-                return ResponseEntity.ok("");
+                return ResponseEntity.ok(message);
             }
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body("username already taken");
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(message);
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("invalid lobby code");
     }
@@ -68,12 +67,22 @@ public class GameController {
             eventService.getPublishers()
                 .get(dto.getLobbyCode())
                 .publishEvent(new LobbyEvent(
-                    EventType.LEAVE,
-                    dto.getUserName()
+                    EventType.WAIT, null
                 ));
         } catch(NullPointerException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");
         }
         return ResponseEntity.ok("");
+    }
+
+    @GetMapping("/all/players/{lobbyCode}")
+    public ArrayList<PlayerDTO> allPlayers(@PathVariable String lobbyCode) {
+        ArrayList<PlayerDTO> players = new ArrayList<>();
+        gameService.getLobbies().get(lobbyCode).getPlayers()
+            .forEach(player -> players.add(new PlayerDTO(
+                player.getUserName(),
+                player.getSkin()
+            )));
+        return players;
     }
 }

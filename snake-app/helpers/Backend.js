@@ -40,3 +40,14 @@ export async function postLeaveGame(lobbyDTO) {
         console.error(e);
     }
 }
+
+export async function getAllPlayers(lobbyCode) {
+    try {
+        let response = await fetch(URL + '/all/players/' + lobbyCode, {
+            method: 'GET'
+        });
+        return response.json();
+    } catch(e) {
+        console.error(e);
+    }
+}

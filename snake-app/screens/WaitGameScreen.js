@@ -1,21 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import { useDispatch, useStore } from 'react-redux';
 import { cleanAll } from '../store/PlayerAction';
-import { postLeaveGame, URL } from '../helpers/Backend';
+import { postLeaveGame, getAllPlayers, URL } from '../helpers/Backend';
+import EventType from '../helpers/EventType';
 import RNEventSource from 'react-native-event-source';
 import Styles from '../styles/Global';
 
 const WaitGameScreen = (props) => {
     const dispatch = useDispatch();
     const store = useStore();
+    const [players, setPlayers] = useState([]);
 
     useEffect(() => {
         // componentDidMount
+        if(players.length === 0) {
+            getAllPlayers(props.lobbyCode).then(data => {
+                setPlayers(data);
+            });
+        }
         let sse = new RNEventSource(URL + '/sub/' + props.lobbyCode);
         sse.addEventListener('message', (event) => {
-            // wip...
-            console.log(event);
+            const data = JSON.parse(event.data);
+            if(data['type'] === EventType.WAIT) {
+                getAllPlayers(props.lobbyCode).then(data => {
+                    setPlayers(data);
+                });
+            }
         });
         // componentWillUnmount
         return function cleanUp() {
@@ -46,16 +57,11 @@ const WaitGameScreen = (props) => {
             <Text style={Styles.mainTitle}>Lobby: {props.lobbyCode}</Text>
             <View style={{height: '40%', marginVertical: 30}}>
                 <ScrollView style={{paddingHorizontal: '30%'}}>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
-                    <Text>Hello World</Text>
+                    {players.map((player, i) => (
+                        <View key={i}>
+                            <Text style={Styles.mainButtonText}>wip: {player.skin} {player.userName}</Text>
+                        </View>
+                    ))}
                 </ScrollView>
             </View>
             <Text>wip: Total players</Text>

@@ -26,7 +26,7 @@ const JoinGameScreen = (props) => {
                 // wip: Show alert
                 console.log('invalid lobby code');
             } else if(status === 403) {
-                // wip: Show alert
+                // wip: Maybe lobby already full
                 console.log('username already taken')
             } else {
                 props.screenHandler();

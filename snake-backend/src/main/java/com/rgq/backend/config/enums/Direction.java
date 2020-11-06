@@ -1,4 +1,4 @@
-package com.rgq.backend.memory;
+package com.rgq.backend.config.enums;
 
 public enum Direction {
     LEFT,
