@@ -13,8 +13,8 @@ const NewGameScreen = (props) => {
 
     const onCheckClick = (userName) => {
         postNewGame(userName).then(data => {
-            dispatch(updateAll(new LobbyDTO(userName, data)));
-            props.screenHandler(Screens.WAIT_GAME, {lobbyCode: data, host: true});
+            dispatch(updateAll(new LobbyDTO(userName, data), true));
+            props.screenHandler(Screens.WAIT_GAME);
         });
     }
 

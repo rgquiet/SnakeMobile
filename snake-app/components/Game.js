@@ -33,9 +33,9 @@ const Game = () => {
             keyExtractor={state.images.key}
             renderItem={({item}) => (
                 <Image
+                    style={{width: WIDTH, height: HEIGHT}}
                     key={item.key}
                     source={item.path}
-                    style={{width: WIDTH, height: HEIGHT}}
                 />
             )}
         />

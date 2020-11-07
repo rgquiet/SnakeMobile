@@ -20,14 +20,14 @@ const JoinGameScreen = (props) => {
         let lobbyDTO = new LobbyDTO(userName, lobbyCode);
         postJoinGame(lobbyDTO).then(status => {
             if(status === 200) {
-                dispatch(updateAll(lobbyDTO));
-                props.screenHandler(Screens.WAIT_GAME, {lobbyCode: lobbyCode, host: false});
+                dispatch(updateAll(lobbyDTO, false));
+                props.screenHandler(Screens.WAIT_GAME);
             } else if(status === 400) {
                 // wip: Show alert
                 console.log('invalid lobby code');
             } else if(status === 403) {
                 // wip: Maybe lobby already full
-                console.log('username already taken')
+                console.log('username already taken');
             } else {
                 props.screenHandler();
             }

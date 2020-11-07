@@ -49,7 +49,7 @@ public class GameController {
                 eventService.getPublishers()
                     .get(dto.getLobbyCode())
                     .publishEvent(new LobbyEvent(
-                        EventType.WAIT, null
+                        EventType.WAIT, allPlayers(dto.getLobbyCode())
                     ));
                 return ResponseEntity.ok(message);
             }
@@ -67,7 +67,7 @@ public class GameController {
             eventService.getPublishers()
                 .get(dto.getLobbyCode())
                 .publishEvent(new LobbyEvent(
-                    EventType.WAIT, null
+                    EventType.WAIT, allPlayers(dto.getLobbyCode())
                 ));
         } catch(NullPointerException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("");

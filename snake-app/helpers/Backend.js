@@ -15,9 +15,7 @@ export async function postJoinGame(lobbyDTO) {
     try {
         let response = await fetch(URL + '/join', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(lobbyDTO)
         });
         return response.status;
@@ -30,9 +28,7 @@ export async function postLeaveGame(lobbyDTO) {
     try {
         let response = await fetch(URL + '/leave', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(lobbyDTO)
         });
         return response.status;

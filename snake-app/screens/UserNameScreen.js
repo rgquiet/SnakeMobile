@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, TouchableOpacity, Text } from 'react-native';
+import { View, TouchableOpacity, Text, TextInput } from 'react-native';
 import Styles from '../styles/Global';
 
 const UserNameScreen = (props) => {
@@ -17,7 +17,7 @@ const UserNameScreen = (props) => {
                     style={Styles.mainButton}
                     onPress={() => props.checkHandler(userName)}
                 >
-                    <Text style={Styles.mainButtonText}>check</Text>
+                    <Text style={Styles.mainText}>check</Text>
                 </TouchableOpacity>
                 <TextInput
                     style={[Styles.mainInput, {width: 318}]}
@@ -30,7 +30,7 @@ const UserNameScreen = (props) => {
                 style={[Styles.mainButton, Styles.leftCorner]}
                 onPress={() => props.screenHandler()}
             >
-                <Text style={Styles.mainButtonText}>back</Text>
+                <Text style={Styles.mainText}>back</Text>
             </TouchableOpacity>
         </View>
     );

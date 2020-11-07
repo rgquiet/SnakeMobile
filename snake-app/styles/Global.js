@@ -20,7 +20,7 @@ export default StyleSheet.create({
         marginHorizontal: 25,
         padding: 10
     },
-    mainButtonText: {
+    mainText: {
         fontSize: 18,
         color: Colors.FONT_COLOR
     },
