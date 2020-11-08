@@ -1,3 +1,4 @@
 export default {
-    WAIT: 'WAIT'
+    WAIT: 'WAIT',
+    START: 'START'
 }

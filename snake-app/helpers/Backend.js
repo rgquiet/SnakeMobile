@@ -1,6 +1,6 @@
 export const URL = 'http://192.168.1.254:8080/api/game';
 
-export async function postNewGame(userName) {
+export async function postNewLobby(userName) {
     try {
         let response = await fetch(URL + '/new/' + userName, {
             method: 'POST'
@@ -11,7 +11,7 @@ export async function postNewGame(userName) {
     }
 }
 
-export async function postJoinGame(lobbyDTO) {
+export async function postJoinLobby(lobbyDTO) {
     try {
         let response = await fetch(URL + '/join', {
             method: 'POST',
@@ -24,9 +24,22 @@ export async function postJoinGame(lobbyDTO) {
     }
 }
 
-export async function postLeaveGame(lobbyDTO) {
+export async function postLeaveLobby(lobbyDTO) {
     try {
         let response = await fetch(URL + '/leave', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(lobbyDTO)
+        });
+        return response.status;
+    } catch(e) {
+        console.error(e);
+    }
+}
+
+export async function postStartGame(lobbyDTO) {
+    try {
+        let response = await fetch(URL + '/start', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(lobbyDTO)

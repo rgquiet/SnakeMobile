@@ -5,30 +5,30 @@ export default StyleSheet.create({
     mainView: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: Colors.BACKGROUND_COLOR
+        backgroundColor: Colors.BACKGROUND
     },
     mainTitle: {
         position: 'relative',
         bottom: 10,
         fontSize: 25,
-        color: Colors.FONT_COLOR,
+        color: Colors.FONT,
         marginBottom: 10
     },
     mainButton: {
         borderWidth: 1,
-        borderColor: Colors.BORDER_COLOR,
+        borderColor: Colors.BORDER,
         marginHorizontal: 25,
         padding: 10
     },
     mainText: {
         fontSize: 18,
-        color: Colors.FONT_COLOR
+        color: Colors.FONT
     },
     mainInput: {
         height: 50,
         borderWidth: 1,
-        borderColor: Colors.BORDER_COLOR,
-        color: Colors.FONT_COLOR,
+        borderColor: Colors.BORDER,
+        color: Colors.FONT,
         paddingHorizontal: 15
     },
     leftCorner: {

@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class LobbyEvent {
+public class SessionEvent {
     private EventType type;
     private Object payload;
 }

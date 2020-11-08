@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, ScrollView, TouchableOpacity, Text, Image } from 'react-native';
 import { useStore, useDispatch } from 'react-redux';
 import { cleanAll } from '../store/PlayerAction';
-import { postLeaveGame, getAllPlayers, URL } from '../helpers/Backend';
+import { postStartGame, postLeaveLobby, getAllPlayers, URL } from '../helpers/Backend';
 import LobbyDTO from '../helpers/LobbyDTO';
 import EventType from '../helpers/EventType';
 import RNEventSource from 'react-native-event-source';
@@ -27,6 +27,8 @@ const WaitGameScreen = (props) => {
             const data = JSON.parse(event.data);
             if(data['type'] === EventType.WAIT) {
                 setPlayers(data['payload']);
+            } else if(data['type'] === EventType.START) {
+                // wip...
             }
         });
         // componentWillUnmount
@@ -44,7 +46,7 @@ const WaitGameScreen = (props) => {
                 store.getState().player.userName,
                 store.getState().player.lobbyCode
             );
-            postLeaveGame(lobbyDTO).then(status => {
+            postLeaveLobby(lobbyDTO).then(status => {
                 if(status === 200) {
                     dispatch(cleanAll());
                     props.screenHandler();
@@ -54,18 +56,24 @@ const WaitGameScreen = (props) => {
     }
 
     const onStartClick = () => {
-        console.log('wip: Start the game!');
+        let lobbyDTO = new LobbyDTO(
+            store.getState().player.userName,
+            store.getState().player.lobbyCode
+        );
+        postStartGame(lobbyDTO).then(status => {
+            console.log(status);
+        });
     }
 
     const getSkinImage = (skin) => {
         if(skin === Skins.RED) {
-            return require('../assets/red_dummy.png');
+            return require('../assets/dummy_red.png');
         } else if(skin === Skins.GREEN) {
-            return require('../assets/green_dummy.png');
+            return require('../assets/dummy_green.png');
         } else if(skin === Skins.YELLOW) {
-            return require('../assets/yellow_dummy.png');
+            return require('../assets/dummy_yellow.png');
         } else if(skin === Skins.PURPLE) {
-            return require('../assets/purple_dummy.png');
+            return require('../assets/dummy_purple.png');
         }
     }
 
@@ -85,7 +93,7 @@ const WaitGameScreen = (props) => {
                     ))}
                 </ScrollView>
             </View>
-            <Text style={Styles.mainText}>Players ({players.length} / 4)</Text>
+            <Text style={Styles.mainText}>wip: Players ({players.length} / 4)</Text>
             <TouchableOpacity
                 style={[Styles.mainButton, Styles.leftCorner]}
                 onPress={() => onQuitClick()}

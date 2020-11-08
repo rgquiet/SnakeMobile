@@ -1,22 +1,21 @@
-package com.rgq.backend.config;
+package com.rgq.backend.sse;
 
-import com.rgq.backend.sse.LobbyEvent;
 import org.springframework.http.codec.ServerSentEvent;
 import reactor.core.publisher.DirectProcessor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.FluxProcessor;
 import reactor.core.publisher.FluxSink;
 
-public class LobbyEventPublisher {
-    private final FluxProcessor<LobbyEvent, LobbyEvent> processor;
-    private final FluxSink<LobbyEvent> sink;
+public class EventPublisher {
+    private final FluxProcessor<SessionEvent, SessionEvent> processor;
+    private final FluxSink<SessionEvent> sink;
 
-    public LobbyEventPublisher() {
-        this.processor = DirectProcessor.<LobbyEvent>create().serialize();
+    public EventPublisher() {
+        this.processor = DirectProcessor.<SessionEvent>create().serialize();
         this.sink = processor.sink();
     }
 
-    public void publishEvent(LobbyEvent event) {
+    public void publishEvent(SessionEvent event) {
         sink.next(event);
     }
 
