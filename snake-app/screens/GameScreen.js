@@ -13,17 +13,17 @@ const HEIGHT = Dimensions.get('window').height / ROWS;
 
 const GameScreen = (props) => {
     const store = useStore();
-    const [battlefield, setBattlefield] = useState([]);
+    const [battleField, setBattleField] = useState([]);
 
     useEffect(() => {
         // componentDidMount
-        if(battlefield.length === 0) {
+        if(battleField.length === 0) {
             // wip: Dummy logic
             let arr = [];
             for(let i = 0; i < COLS * ROWS; i++) {
                 arr.push({key: i, path: require('../assets/dummy.png')});
             }
-            setBattlefield(arr);
+            setBattleField(arr);
         }
         let lobbyCode = store.getState().player.lobbyCode;
         let sse = new RNEventSource(URL + '/sub/' + lobbyCode);
@@ -44,8 +44,8 @@ const GameScreen = (props) => {
         <Joystick>
             <FlatList
                 numColumns={COLS}
-                data={battlefield}
-                keyExtractor={battlefield.key}
+                data={battleField}
+                keyExtractor={battleField.key}
                 renderItem={({item}) => (
                     <Image
                         style={{width: WIDTH, height: HEIGHT}}
