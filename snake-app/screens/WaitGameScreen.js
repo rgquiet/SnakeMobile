@@ -6,6 +6,7 @@ import { postStartGame, postLeaveLobby, getAllPlayers, URL } from '../helpers/Ba
 import LobbyDTO from '../helpers/LobbyDTO';
 import EventType from '../helpers/EventType';
 import RNEventSource from 'react-native-event-source';
+import Screens from './Screens';
 import Skins from '../styles/Skins';
 import Styles from '../styles/Global';
 
@@ -28,7 +29,8 @@ const WaitGameScreen = (props) => {
             if(data['type'] === EventType.WAIT) {
                 setPlayers(data['payload']);
             } else if(data['type'] === EventType.START) {
-                // wip...
+                console.log(data['payload']);
+                props.screenHandler(Screens.RUN_GAME);
             }
         });
         // componentWillUnmount

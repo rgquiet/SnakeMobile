@@ -14,28 +14,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67629417-2034-41ce-8d1d-517a5dbd7c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Session.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snake-app/components/Direction.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/.expo/packager-info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/green_dummy.png" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/assets/dummy_green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/purple_dummy.png" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/assets/dummy_purple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/red_dummy.png" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/assets/dummy_red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/yellow_dummy.png" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/assets/dummy_yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/helpers/Backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/helpers/Backend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/components/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/GameScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/components/Joystick.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/components/Joystick.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/components/Pad.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/components/Pad.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/helpers/EventType.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/helpers/EventType.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/screens/JoinGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/JoinGameScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/screens/NewGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/NewGameScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/screens/Screens.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/Screens.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/screens/WaitGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/WaitGameScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/styles/Colors.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/styles/Colors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/styles/Global.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/styles/Global.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/LobbyEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/EventPublisher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Lobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Lobby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/EventService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/EventType.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/EventType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/LobbyEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/SessionEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +41,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JavaScript File" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -97,11 +88,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Robin Güdel\Work\Coding\_Projects\Snake\master\snake-app\screens" />
       <recent name="C:\Users\Robin Güdel\Work\Coding\_Projects\Snake\master\snake-app\assets" />
       <recent name="C:\Users\Robin Güdel\Work\Coding\_Projects\Snake\master\snake-app\store" />
       <recent name="C:\Users\Robin Güdel\Work\Coding\_Projects\Snake\master\snake-app\helpers" />
       <recent name="C:\Users\Robin Güdel\Work\Coding\_Projects\Snake\master\snake-app\styles" />
-      <recent name="C:\Users\Robin Güdel\Work\Coding\_Projects\Snake\master\snake-app\screens" />
     </key>
   </component>
   <component name="RunManager">
@@ -141,7 +132,8 @@
     <MESSAGE value="Save lobbies and players in the backend memory" />
     <MESSAGE value="Update waiting players" />
     <MESSAGE value="- WaitGameScreen: Use store instead of props&#10;- Changed Event payload from null to Array(PlayerDTO)" />
-    <option name="LAST_COMMIT_MESSAGE" value="- WaitGameScreen: Use store instead of props&#10;- Changed Event payload from null to Array(PlayerDTO)" />
+    <MESSAGE value="Refactoring: Use Session instead of EventService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring: Use Session instead of EventService" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="0" key="#Project_Structure" timestamp="1603921985473">
@@ -156,10 +148,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="398" y="33" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1604610195970" />
-    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog" timestamp="1604765121142">
+    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog" timestamp="1604915423134">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1604765121142" />
+    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1604915423134" />
     <state x="316" y="58" key="FileChooserDialogImpl" timestamp="1603923217577">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -172,38 +164,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="316" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1604077815362" />
-    <state width="1237" height="170" key="GridCell.Tab.0.bottom" timestamp="1604859908401">
+    <state width="1237" height="170" key="GridCell.Tab.0.bottom" timestamp="1604914806559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604859908401" />
-    <state width="1237" height="170" key="GridCell.Tab.0.center" timestamp="1604859908401">
+    <state width="1237" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604914806559" />
+    <state width="1237" height="170" key="GridCell.Tab.0.center" timestamp="1604914806559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604859908401" />
-    <state width="1237" height="170" key="GridCell.Tab.0.left" timestamp="1604859908401">
+    <state width="1237" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604914806559" />
+    <state width="1237" height="170" key="GridCell.Tab.0.left" timestamp="1604914806559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604859908401" />
-    <state width="1237" height="170" key="GridCell.Tab.0.right" timestamp="1604859908401">
+    <state width="1237" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604914806559" />
+    <state width="1237" height="170" key="GridCell.Tab.0.right" timestamp="1604914806559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604859908401" />
-    <state width="1237" height="170" key="GridCell.Tab.1.bottom" timestamp="1604859908401">
+    <state width="1237" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604914806559" />
+    <state width="1237" height="170" key="GridCell.Tab.1.bottom" timestamp="1604914806559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604859908401" />
-    <state width="1237" height="170" key="GridCell.Tab.1.center" timestamp="1604859908401">
+    <state width="1237" height="170" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604914806559" />
+    <state width="1237" height="170" key="GridCell.Tab.1.center" timestamp="1604914806559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604859908401" />
-    <state width="1237" height="170" key="GridCell.Tab.1.left" timestamp="1604859908401">
+    <state width="1237" height="170" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604914806559" />
+    <state width="1237" height="170" key="GridCell.Tab.1.left" timestamp="1604914806559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604859908401" />
-    <state width="1237" height="170" key="GridCell.Tab.1.right" timestamp="1604859908401">
+    <state width="1237" height="170" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604914806559" />
+    <state width="1237" height="170" key="GridCell.Tab.1.right" timestamp="1604914806559">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604859908401" />
+    <state width="1237" height="170" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604914806559" />
     <state x="315" y="45" width="677" height="590" key="NewModule_or_Project.wizard" timestamp="1603923233317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -212,14 +204,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604076821627" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1604765054720">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1604860813547">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604765054720" />
-    <state x="271" y="0" width="778" height="600" key="find.popup" timestamp="1604853625172">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604860813547" />
+    <state x="271" y="0" width="778" height="600" key="find.popup" timestamp="1604870218026">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="271" y="0" width="778" height="600" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1604853625172" />
+    <state x="271" y="0" width="778" height="600" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1604870218026" />
     <state x="306" y="0" key="new project wizard" timestamp="1603923207626">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

@@ -7,6 +7,7 @@ import StartScreen from './screens/StartScreen';
 import NewGameScreen from './screens/NewGameScreen';
 import JoinGameScreen from './screens/JoinGameScreen';
 import WaitGameScreen from './screens/WaitGameScreen';
+import GameScreen from './screens/GameScreen';
 import Screens from './screens/Screens';
 
 const rootReducer = combineReducers({
@@ -15,20 +16,22 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 export default class App extends Component {
-    onChangeScreenHandler = (screen) => {
+    onChangeScreen = (screen) => {
         if(screen === Screens.NEW_GAME) {
-            this.setState({screen: <NewGameScreen screenHandler={this.onChangeScreenHandler}/>});
+            this.setState({screen: <NewGameScreen screenHandler={this.onChangeScreen}/>});
         } else if(screen === Screens.JOIN_GAME) {
-            this.setState({screen: <JoinGameScreen screenHandler={this.onChangeScreenHandler}/>});
+            this.setState({screen: <JoinGameScreen screenHandler={this.onChangeScreen}/>});
         } else if(screen === Screens.WAIT_GAME) {
-            this.setState({screen: <WaitGameScreen screenHandler={this.onChangeScreenHandler}/>});
+            this.setState({screen: <WaitGameScreen screenHandler={this.onChangeScreen}/>});
+        } else if(screen === Screens.RUN_GAME) {
+            this.setState({screen: <GameScreen screenHandler={this.onChangeScreen}/>});
         } else {
-            this.setState({screen: <StartScreen screenHandler={this.onChangeScreenHandler}/>});
+            this.setState({screen: <StartScreen screenHandler={this.onChangeScreen}/>});
         }
     }
 
     state = {
-        screen: <StartScreen screenHandler={this.onChangeScreenHandler}/>
+        screen: <StartScreen screenHandler={this.onChangeScreen}/>
     }
 
     render() {

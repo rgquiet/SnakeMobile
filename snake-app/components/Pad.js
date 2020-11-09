@@ -24,7 +24,6 @@ export default class Pad extends Component {
     };
 
     componentWillReceiveProps({visible}) {
-        // wip: Don't use componentWillReceiveProps
         const {props} = this;
         if(props.visible !== visible) {
             this.visible = visible;
@@ -121,6 +120,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: THUMB_RADIUS * 2,
         borderRadius: THUMB_RADIUS,
+        // wip: Set color from skin
         backgroundColor: 'black',
         aspectRatio: 1
     }

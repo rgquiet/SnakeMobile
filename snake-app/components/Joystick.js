@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { MultiTouchView } from 'expo-multi-touch';
 import Pad from './Pad';
+import Direction from './Direction';
 
 export default class Joystick extends Component {
     firstTouchStart = {x: 0, y: 0};
@@ -11,6 +12,7 @@ export default class Joystick extends Component {
     state = {
         touches: {},
         show: false,
+        // wip: Start direction shouldn't be empty
         direction: ''
     };
 
@@ -39,7 +41,7 @@ export default class Joystick extends Component {
             }));
             let currentTouch = this.pad;
             if(currentTouch.speed === 1) {
-                let currentDirection = this.onChangeDirectionHandler(currentTouch.angle);
+                let currentDirection = this.onChangeDirection(currentTouch.angle);
                 if(currentDirection !== this.state.direction) {
                     console.log(currentDirection);
                     this.setState({
@@ -48,11 +50,11 @@ export default class Joystick extends Component {
                 }
             }
         },
-        onTouchEnded: (event) => { this.onTouchOverHandler(event); },
-        onTouchCancelled: (event) => { this.onTouchOverHandler(event); }
+        onTouchEnded: (event) => { this.onTouchOver(event); },
+        onTouchCancelled: (event) => { this.onTouchOver(event); }
     };
 
-    onTouchOverHandler(event) {
+    onTouchOver(event) {
         const {identifier} = event;
         this.setState((previous) => ({
             touches: {
@@ -67,15 +69,15 @@ export default class Joystick extends Component {
         }
     };
 
-    onChangeDirectionHandler(angle) {
+    onChangeDirection(angle) {
         if(angle < -2 || angle > 2) {
-            return 'left';
+            return Direction.LEFT;
         } else if(angle >= -2 && angle < -1) {
-            return 'up';
+            return Direction.UP;
         } else if(angle >= -1 && angle < 1) {
-            return 'right';
+            return Direction.RIGHT;
         } else {
-            return 'down';
+            return Direction.DOWN;
         }
     }
 

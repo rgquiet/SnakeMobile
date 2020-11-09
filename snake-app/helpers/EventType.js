@@ -1,4 +1,5 @@
 export default {
     WAIT: 'WAIT',
-    START: 'START'
+    START: 'START',
+    UPDATE: 'UPDATE'
 }

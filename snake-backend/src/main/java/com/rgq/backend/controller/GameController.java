@@ -54,7 +54,6 @@ public class GameController {
 
     @PostMapping("/start")
     public ResponseEntity<String> startGame(@RequestBody LobbyDTO dto) {
-        // wip...
         service.changeLobbyToGame(dto.getUserName(), dto.getLobbyCode());
         return ResponseEntity.ok("");
     }
