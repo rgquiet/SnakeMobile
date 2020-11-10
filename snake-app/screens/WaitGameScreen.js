@@ -1,44 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect, useImperativeHandle, forwardRef } from 'react';
 import { View, ScrollView, TouchableOpacity, Text, Image } from 'react-native';
 import { useStore, useDispatch } from 'react-redux';
 import { cleanAll } from '../store/PlayerAction';
-import { postStartGame, postLeaveLobby, getAllPlayers, URL } from '../helpers/Backend';
+import { postStartGame, postLeaveLobby, getAllPlayers } from '../helpers/Backend';
 import LobbyDTO from '../helpers/LobbyDTO';
-import EventType from '../helpers/EventType';
-import RNEventSource from 'react-native-event-source';
-import Screens from './Screens';
 import Skins from '../styles/Skins';
 import Styles from '../styles/Global';
 
-const WaitGameScreen = (props) => {
+const WaitGameScreen = forwardRef((props, ref) => {
     const store = useStore();
     const dispatch = useDispatch();
     const [players, setPlayers] = useState([]);
 
     useEffect(() => {
-        // componentDidMount
-        let lobbyCode = store.getState().player.lobbyCode;
         if(players.length === 0) {
-            getAllPlayers(lobbyCode).then(data => {
+            getAllPlayers(store.getState().player.lobbyCode).then(data => {
                 setPlayers(data);
             });
         }
-        let sse = new RNEventSource(URL + '/sub/' + lobbyCode);
-        sse.addEventListener('message', (event) => {
-            const data = JSON.parse(event.data);
-            if(data['type'] === EventType.WAIT) {
-                setPlayers(data['payload']);
-            } else if(data['type'] === EventType.START) {
-                console.log(data['payload']);
-                props.screenHandler(Screens.RUN_GAME);
-            }
-        });
-        // componentWillUnmount
-        return function cleanUp() {
-            sse.removeAllListeners();
-            sse.close();
-        };
     });
+
+    useImperativeHandle(ref, () => ({
+
+        onUpdatePlayers(players) {
+            setPlayers(players);
+        }
+    }));
 
     const onQuitClick = () => {
         if(store.getState().player.host) {
@@ -52,6 +39,8 @@ const WaitGameScreen = (props) => {
                 if(status === 200) {
                     dispatch(cleanAll());
                     props.screenHandler();
+                } else {
+                    console.log(status);
                 }
             });
         }
@@ -112,6 +101,6 @@ const WaitGameScreen = (props) => {
             }
         </View>
     );
-}
+});
 
 export default WaitGameScreen;

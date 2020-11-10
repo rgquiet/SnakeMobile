@@ -14,13 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67629417-2034-41ce-8d1d-517a5dbd7c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/PowerUp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/screens/GameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/GameScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/screens/WaitGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/WaitGameScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/PlayerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/PlayerInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/PlayerProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/PlayerProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +126,8 @@
     <MESSAGE value="- WaitGameScreen: Use store instead of props&#10;- Changed Event payload from null to Array(PlayerDTO)" />
     <MESSAGE value="Refactoring: Use Session instead of EventService" />
     <MESSAGE value="Executor set up in the game class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Executor set up in the game class" />
+    <MESSAGE value="Use queue for player position" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use queue for player position" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="0" key="#Project_Structure" timestamp="1603921985473">
@@ -143,10 +142,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="398" y="33" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1604610195970" />
-    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog" timestamp="1604938528153">
+    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog" timestamp="1604964038136">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1604938528153" />
+    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1604964038136" />
     <state x="316" y="58" key="FileChooserDialogImpl" timestamp="1603923217577">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -159,38 +158,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="316" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1604077815362" />
-    <state width="1237" height="170" key="GridCell.Tab.0.bottom" timestamp="1604938811486">
+    <state width="1237" height="170" key="GridCell.Tab.0.bottom" timestamp="1604961156761">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604938811486" />
-    <state width="1237" height="170" key="GridCell.Tab.0.center" timestamp="1604938811486">
+    <state width="1237" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604961156761" />
+    <state width="1237" height="170" key="GridCell.Tab.0.center" timestamp="1604961156761">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604938811486" />
-    <state width="1237" height="170" key="GridCell.Tab.0.left" timestamp="1604938811486">
+    <state width="1237" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1604961156761" />
+    <state width="1237" height="170" key="GridCell.Tab.0.left" timestamp="1604961156761">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604938811486" />
-    <state width="1237" height="170" key="GridCell.Tab.0.right" timestamp="1604938811486">
+    <state width="1237" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1604961156761" />
+    <state width="1237" height="170" key="GridCell.Tab.0.right" timestamp="1604961156761">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604938811486" />
-    <state width="1237" height="170" key="GridCell.Tab.1.bottom" timestamp="1604938811487">
+    <state width="1237" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1604961156761" />
+    <state width="1237" height="170" key="GridCell.Tab.1.bottom" timestamp="1604961156761">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604938811487" />
-    <state width="1237" height="170" key="GridCell.Tab.1.center" timestamp="1604938811487">
+    <state width="1237" height="170" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1604961156761" />
+    <state width="1237" height="170" key="GridCell.Tab.1.center" timestamp="1604961156761">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604938811487" />
-    <state width="1237" height="170" key="GridCell.Tab.1.left" timestamp="1604938811486">
+    <state width="1237" height="170" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1604961156761" />
+    <state width="1237" height="170" key="GridCell.Tab.1.left" timestamp="1604961156761">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604938811486" />
-    <state width="1237" height="170" key="GridCell.Tab.1.right" timestamp="1604938811487">
+    <state width="1237" height="170" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1604961156761" />
+    <state width="1237" height="170" key="GridCell.Tab.1.right" timestamp="1604961156761">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604938811487" />
+    <state width="1237" height="170" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1604961156761" />
     <state x="315" y="45" width="677" height="590" key="NewModule_or_Project.wizard" timestamp="1603923233317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -199,14 +198,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604076821627" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1604915536543">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1604939170890">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604915536543" />
-    <state x="271" y="0" width="778" height="600" key="find.popup" timestamp="1604938831941">
+    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604939170890" />
+    <state x="271" y="0" width="778" height="600" key="find.popup" timestamp="1604961064422">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="271" y="0" width="778" height="600" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1604938831941" />
+    <state x="271" y="0" width="778" height="600" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1604961064422" />
     <state x="306" y="0" key="new project wizard" timestamp="1604917981557">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

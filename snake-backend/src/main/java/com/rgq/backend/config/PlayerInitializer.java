@@ -21,5 +21,10 @@ public class PlayerInitializer {
             Direction.LEFT,
             new LinkedList<>(Arrays.asList(0, 1, 2))
         ));
+        properties.add(new PlayerProperties(
+            Skin.GREEN,
+            Direction.LEFT,
+            new LinkedList<>(Arrays.asList(4, 5, 6))
+        ));
     }
 }
