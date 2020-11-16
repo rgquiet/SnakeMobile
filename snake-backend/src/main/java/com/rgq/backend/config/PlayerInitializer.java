@@ -18,12 +18,12 @@ public class PlayerInitializer {
         this.properties = new ArrayList<>();
         properties.add(new PlayerProperties(
             Skin.RED,
-            Direction.LEFT,
+            Direction.RIGHT,
             new LinkedList<>(Arrays.asList(0, 1, 2))
         ));
         properties.add(new PlayerProperties(
             Skin.GREEN,
-            Direction.LEFT,
+            Direction.RIGHT,
             new LinkedList<>(Arrays.asList(4, 5, 6))
         ));
     }

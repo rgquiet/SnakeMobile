@@ -16,11 +16,13 @@ public class Player {
     private final Queue<Integer> position;
     private Direction direction;
     private Direction newDirection;
+    private Boolean dead = false;
 
     public Player(String userName, PlayerProperties properties) {
         this.userName = userName;
         this.skin = properties.getSkin();
         this.position = properties.getPosition();
         this.direction = properties.getDirection();
+        this.newDirection = properties.getDirection();
     }
 }

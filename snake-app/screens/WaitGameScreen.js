@@ -2,9 +2,9 @@ import React, { useState, useEffect, useImperativeHandle, forwardRef } from 'rea
 import { View, ScrollView, TouchableOpacity, Text, Image } from 'react-native';
 import { useStore, useDispatch } from 'react-redux';
 import { cleanAll } from '../store/PlayerAction';
-import { postStartGame, postLeaveLobby, getAllPlayers } from '../helpers/Backend';
 import LobbyDTO from '../helpers/LobbyDTO';
-import Skins from '../styles/Skins';
+import { postStartGame, postLeaveLobby, getAllPlayers } from '../helpers/Backend';
+import { getSkinImage } from '../styles/Images';
 import Styles from '../styles/Global';
 
 const WaitGameScreen = forwardRef((props, ref) => {
@@ -54,18 +54,6 @@ const WaitGameScreen = forwardRef((props, ref) => {
         postStartGame(lobbyDTO).then(status => {
             console.log(status);
         });
-    }
-
-    const getSkinImage = (skin) => {
-        if(skin === Skins.RED) {
-            return require('../assets/dummy_red.png');
-        } else if(skin === Skins.GREEN) {
-            return require('../assets/dummy_green.png');
-        } else if(skin === Skins.YELLOW) {
-            return require('../assets/dummy_yellow.png');
-        } else if(skin === Skins.PURPLE) {
-            return require('../assets/dummy_purple.png');
-        }
     }
 
     return (

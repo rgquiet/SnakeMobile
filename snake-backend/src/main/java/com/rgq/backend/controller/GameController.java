@@ -25,7 +25,11 @@ public class GameController {
 
     @GetMapping(value = "/sub/{lobbyCode}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<ServerSentEvent<?>> subEventStream(@PathVariable String lobbyCode) {
-        return service.getSessions().get(lobbyCode).getPublisher().subPublisher();
+        try {
+            return service.getSessions().get(lobbyCode).getPublisher().subPublisher();
+        } catch(NullPointerException e) {
+            return null;
+        }
     }
 
     @PostMapping("/new/{userName}")
