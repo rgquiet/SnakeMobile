@@ -1,22 +1,28 @@
 package com.rgq.backend.service;
 
+import com.rgq.backend.memory.Channel;
 import com.rgq.backend.memory.Game;
-import com.rgq.backend.sse.EventPublisher;
 import com.rgq.backend.config.PlayerInitializer;
 import com.rgq.backend.memory.Lobby;
 import com.rgq.backend.memory.Session;
 import lombok.Getter;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 
 @Getter
 @Service
-public class GameService {
+public class SessionService {
+    private final SimpMessagingTemplate template;
     private final PlayerInitializer initializer;
     private final HashMap<String, Session> sessions;
 
-    GameService(PlayerInitializer initializer) {
+    SessionService(
+        SimpMessagingTemplate template,
+        PlayerInitializer initializer
+    ) {
+        this.template = template;
         this.initializer = initializer;
         this.sessions = new HashMap<>();
     }
@@ -38,7 +44,7 @@ public class GameService {
             Session session = sessions.get(lobbyCode);
             if(session == null) {
                 sessions.put(lobbyCode, new Lobby(
-                    new EventPublisher(),
+                    new Channel(lobbyCode, template),
                     initializer,
                     userName
                 ));
@@ -53,7 +59,7 @@ public class GameService {
         if(session instanceof Lobby) {
             if(((Lobby) session).isHost(userName)) {
                 sessions.put(lobbyCode, new Game(
-                    session.getPublisher(),
+                    session.getChannel(),
                     session.getPlayers()
                 ));
             }

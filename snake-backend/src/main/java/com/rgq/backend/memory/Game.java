@@ -2,9 +2,8 @@ package com.rgq.backend.memory;
 
 import com.rgq.backend.config.enums.Direction;
 import com.rgq.backend.config.enums.Field;
-import com.rgq.backend.sse.EventPublisher;
-import com.rgq.backend.sse.EventType;
-import com.rgq.backend.sse.SessionEvent;
+import com.rgq.backend.config.enums.Type;
+import com.rgq.backend.dto.WebSocketDTO;
 
 import java.util.*;
 import java.util.concurrent.Executors;
@@ -19,15 +18,15 @@ public class Game extends Session {
     private Integer speed = 1000;
 
     public Game(
-        EventPublisher publisher,
+        Channel channel,
         ArrayList<Player> players
     ) {
-        super(publisher, players);
+        super(channel, players);
         this.powerUps = new ArrayList<>();
         generatePowerUp();
         // Send game start event
-        publisher.publishEvent(new SessionEvent(
-            EventType.START,
+        channel.send(new WebSocketDTO(
+            Type.START,
             getBattleField()
             // wip: Add game constants like x, y etc.
         ));
@@ -49,8 +48,8 @@ public class Game extends Session {
             powerUps.removeIf(powerUp -> powerUp.getPosition().equals(eaten));
             generatePowerUp();
         });
-        getPublisher().publishEvent(new SessionEvent(
-            EventType.UPDATE,
+        getChannel().send(new WebSocketDTO(
+            Type.UPDATE,
             getBattleField()
         ));
     }

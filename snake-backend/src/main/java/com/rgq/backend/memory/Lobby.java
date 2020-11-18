@@ -1,9 +1,8 @@
 package com.rgq.backend.memory;
 
-import com.rgq.backend.sse.EventPublisher;
 import com.rgq.backend.config.PlayerInitializer;
-import com.rgq.backend.sse.EventType;
-import com.rgq.backend.sse.SessionEvent;
+import com.rgq.backend.config.enums.Type;
+import com.rgq.backend.dto.WebSocketDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -12,11 +11,11 @@ public class Lobby extends Session {
     private final String host;
 
     public Lobby(
-        EventPublisher publisher,
+        Channel channel,
         PlayerInitializer initializer,
         String userName
     ) {
-        super(publisher);
+        super(channel);
         this.initializer = initializer;
         getPlayers().add(new Player(
             userName,
@@ -45,8 +44,8 @@ public class Lobby extends Session {
                 .status(HttpStatus.BAD_REQUEST)
                 .body("lobby already full");
         }
-        getPublisher().publishEvent(new SessionEvent(
-            EventType.WAIT,
+        getChannel().send(new WebSocketDTO(
+            Type.WAIT,
             getPlayers()
         ));
         return ResponseEntity.ok("");
@@ -54,8 +53,8 @@ public class Lobby extends Session {
 
     public void removePlayer(String userName) {
         getPlayers().removeIf(player -> player.getUserName().equals(userName));
-        getPublisher().publishEvent(new SessionEvent(
-            EventType.WAIT,
+        getChannel().send(new WebSocketDTO(
+            Type.WAIT,
             getPlayers()
         ));
     }

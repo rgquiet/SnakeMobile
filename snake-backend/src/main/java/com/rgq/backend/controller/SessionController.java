@@ -4,32 +4,20 @@ import com.rgq.backend.dto.LobbyDTO;
 import com.rgq.backend.dto.PlayerDTO;
 import com.rgq.backend.memory.Lobby;
 import com.rgq.backend.memory.Session;
-import com.rgq.backend.service.GameService;
+import com.rgq.backend.service.SessionService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.codec.ServerSentEvent;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
 
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/api/game")
-public class GameController {
-    private final GameService service;
+@RequestMapping("/api/session")
+public class SessionController {
+    private final SessionService service;
 
-    GameController(GameService service) {
+    SessionController(SessionService service) {
         this.service = service;
-    }
-
-    @GetMapping(value = "/sub/{lobbyCode}", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<ServerSentEvent<?>> subEventStream(@PathVariable String lobbyCode) {
-        try {
-            return service.getSessions().get(lobbyCode).getPublisher().subPublisher();
-        } catch(NullPointerException e) {
-            return null;
-        }
     }
 
     @PostMapping("/new/{userName}")

@@ -10,36 +10,64 @@
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:WS" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67629417-2034-41ce-8d1d-517a5dbd7c09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/green_body.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/green_head.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/ground.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/purple_body.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/purple_head.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/red_body.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/red_head.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/yellow_body.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-app/assets/yellow_head.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/enums/Field.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_38.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_38.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jakarta_el_3_0_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_3_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_2_3_4_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_5_2_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_5_2_9_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/WebSocketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/dto/WebSocketDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Channel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http2_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_http_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_socks_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_proxy_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_linux_x86_64_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_52_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_netty_reactor_netty_0_9_12_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_10_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_reactor_netty_2_3_4_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_webflux_2_3_4_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_3_4_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webflux_5_2_9_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_9_RELEASE.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_synchronoss_cloud_nio_multipart_parser_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_synchronoss_cloud_nio_stream_storage_1_1_3.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/.expo/packager-info.json" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/.expo/packager-info.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/dummy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/dummy_green.png" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/assets/green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/dummy_purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/assets/purple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/dummy_red.png" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/assets/red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/assets/dummy_yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/assets/yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/screens/GameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/GameScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/screens/WaitGameScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/screens/WaitGameScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-app/styles/Skins.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/styles/Images.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/PlayerInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/PlayerInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/helpers/Backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/helpers/Backend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/helpers/EventType.js" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/helpers/Type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-app/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/snake-app/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/controller/SessionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Lobby.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Lobby.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/memory/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/service/SessionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/EventPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/EventType.java" beforeDir="false" afterPath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/config/enums/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake-backend/src/main/java/com/rgq/backend/sse/SessionEvent.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,12 +82,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="9af72303-a127-4f09-9ddd-dd3988b52c72" />
@@ -129,7 +162,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="WS" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -152,7 +197,8 @@
     <MESSAGE value="Executor set up in the game class" />
     <MESSAGE value="Use queue for player position" />
     <MESSAGE value="Move event listener to App.js and use refs to inform child" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move event listener to App.js and use refs to inform child" />
+    <MESSAGE value="Game updates player position" />
+    <option name="LAST_COMMIT_MESSAGE" value="Game updates player position" />
   </component>
   <component name="WindowStateProjectService">
     <state x="121" y="0" key="#Project_Structure" timestamp="1603921985473">
@@ -167,14 +213,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="398" y="33" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1604610195970" />
-    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog" timestamp="1605529897634">
+    <state x="94" y="73" width="1095" height="495" maximized="true" key="DiffContextDialog" timestamp="1605730155771">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="41" y="165" width="1095" height="495" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1605529897634" />
-    <state x="316" y="58" key="FileChooserDialogImpl" timestamp="1605532984726">
+    <state x="94" y="73" width="1095" height="495" maximized="true" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1605730155771" />
+    <state x="316" y="58" key="FileChooserDialogImpl" timestamp="1605720544206">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="316" y="58" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605532984726" />
+    <state x="316" y="58" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605720544206" />
     <state x="520" y="239" key="Github.ShareDialog" timestamp="1604076967898">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -183,54 +229,54 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="316" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1604077815362" />
-    <state width="1237" height="170" key="GridCell.Tab.0.bottom" timestamp="1605558885600">
+    <state width="1237" height="170" key="GridCell.Tab.0.bottom" timestamp="1605730299034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605558885600" />
-    <state width="1237" height="170" key="GridCell.Tab.0.center" timestamp="1605558885600">
+    <state width="1237" height="170" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605730299034" />
+    <state width="1237" height="170" key="GridCell.Tab.0.center" timestamp="1605730299034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605558885600" />
-    <state width="1237" height="170" key="GridCell.Tab.0.left" timestamp="1605558885600">
+    <state width="1237" height="170" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1605730299034" />
+    <state width="1237" height="170" key="GridCell.Tab.0.left" timestamp="1605730299034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605558885600" />
-    <state width="1237" height="170" key="GridCell.Tab.0.right" timestamp="1605558885600">
+    <state width="1237" height="170" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1605730299034" />
+    <state width="1237" height="170" key="GridCell.Tab.0.right" timestamp="1605730299034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605558885600" />
-    <state width="1237" height="170" key="GridCell.Tab.1.bottom" timestamp="1605558885601">
+    <state width="1237" height="170" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1605730299034" />
+    <state width="1237" height="170" key="GridCell.Tab.1.bottom" timestamp="1605730299034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605558885601" />
-    <state width="1237" height="170" key="GridCell.Tab.1.center" timestamp="1605558885600">
+    <state width="1237" height="170" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605730299034" />
+    <state width="1237" height="170" key="GridCell.Tab.1.center" timestamp="1605730299034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1605558885600" />
-    <state width="1237" height="170" key="GridCell.Tab.1.left" timestamp="1605558885600">
+    <state width="1237" height="170" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1605730299034" />
+    <state width="1237" height="170" key="GridCell.Tab.1.left" timestamp="1605730299034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1605558885600" />
-    <state width="1237" height="170" key="GridCell.Tab.1.right" timestamp="1605558885600">
+    <state width="1237" height="170" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1605730299034" />
+    <state width="1237" height="170" key="GridCell.Tab.1.right" timestamp="1605730299034">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="170" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1605558885600" />
-    <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1605558472708">
+    <state width="1237" height="170" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1605730299034" />
+    <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1605560268480">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605558472708" />
-    <state width="1237" height="204" key="GridCell.Tab.2.center" timestamp="1605558472708">
+    <state width="1237" height="204" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1605560268480" />
+    <state width="1237" height="204" key="GridCell.Tab.2.center" timestamp="1605560268480">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1605558472708" />
-    <state width="1237" height="204" key="GridCell.Tab.2.left" timestamp="1605558472708">
+    <state width="1237" height="204" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1605560268480" />
+    <state width="1237" height="204" key="GridCell.Tab.2.left" timestamp="1605560268480">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1605558472708" />
-    <state width="1237" height="204" key="GridCell.Tab.2.right" timestamp="1605558472708">
+    <state width="1237" height="204" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1605560268480" />
+    <state width="1237" height="204" key="GridCell.Tab.2.right" timestamp="1605560268480">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1605558472708" />
+    <state width="1237" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1605560268480" />
     <state x="315" y="45" width="677" height="590" key="NewModule_or_Project.wizard" timestamp="1603923233317">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -239,14 +285,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="121" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604076821627" />
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2" timestamp="1604996374116">
+    <state x="149" y="73" key="Vcs.Push.Dialog.v2" timestamp="1605730533762">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="61" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1604996374116" />
-    <state x="271" y="0" width="778" height="600" key="find.popup" timestamp="1605559327855">
+    <state x="149" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605730533762" />
+    <state x="249" y="51" width="778" height="600" key="find.popup" timestamp="1605730024282">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="271" y="0" width="778" height="600" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1605559327855" />
+    <state x="249" y="51" width="778" height="600" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1605730024282" />
     <state x="306" y="0" key="new project wizard" timestamp="1605533021521">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

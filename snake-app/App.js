@@ -1,11 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { View, StatusBar } from 'react-native';
-import RNEventSource from 'react-native-event-source';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import PlayerReducer from './store/PlayerReducer';
-import { URL } from './helpers/Backend';
-import EventType from './helpers/EventType';
+import { WS } from './helpers/Backend';
+import Type from './helpers/Type';
+import SockJS from 'sockjs-client';
+import Stomp from 'stompjs';
 import StartScreen from './screens/StartScreen';
 import NewGameScreen from './screens/NewGameScreen';
 import JoinGameScreen from './screens/JoinGameScreen';
@@ -19,52 +20,61 @@ const App = () => {
     });
     const store = createStore(rootReducer);
     const childRef = useRef();
-    let sse = null;
+    let stomp = null;
 
     const onChangeScreen = (screen) => {
         if(screen === Screens.NEW_GAME) {
-            onFinishSSE();
+            onDisconnectWS();
             setScreen(<NewGameScreen screenHandler={onChangeScreen}/>);
         } else if(screen === Screens.JOIN_GAME) {
-            onFinishSSE();
+            onDisconnectWS();
             setScreen(<JoinGameScreen screenHandler={onChangeScreen}/>);
         } else if(screen === Screens.WAIT_GAME) {
-            onStartSSE();
+            onConnectWS();
             setScreen(<WaitGameScreen screenHandler={onChangeScreen} ref={childRef}/>);
         } else if(screen === Screens.RUN_GAME) {
-            onStartSSE();
+            onConnectWS();
             setScreen(<GameScreen screenHandler={onChangeScreen} ref={childRef}/>);
         } else {
-            onFinishSSE();
+            onDisconnectWS();
             setScreen(<StartScreen screenHandler={onChangeScreen}/>);
         }
     }
 
     const [screen, setScreen] = useState(<StartScreen screenHandler={onChangeScreen}/>);
 
-    const onStartSSE = () => {
-        if(!sse) {
-            sse = new RNEventSource(URL + '/sub/' + store.getState().player.lobbyCode);
-            sse.addEventListener('message', (event) => {
-                const data = JSON.parse(event.data);
-                if(data['type'] === EventType.WAIT) {
-                    childRef.current.onUpdatePlayers(data['payload']);
-                } else if(data['type'] === EventType.START) {
-                    onChangeScreen(Screens.RUN_GAME);
-                    // wip...
-                    childRef.current.onUpdateBattleField(data['payload']);
-                } else if(data['type'] === EventType.UPDATE) {
-                    childRef.current.onUpdateBattleField(data['payload']);
-                }
-            });
+    const onConnectWS = () => {
+        if(!stomp) {
+            stomp = Stomp.over(new SockJS(WS));
+            stomp.connect({}, onStompSuccess, onStompError);
         }
     }
 
-    const onFinishSSE = () => {
-        if(sse) {
-            sse.removeAllListeners();
-            sse.close();
-            sse = null;
+    const onStompSuccess = () => {
+        stomp.subscribe('/frontend.' + store.getState().player.lobbyCode, (message) => {
+            let data = JSON.parse(message.body);
+            if(data.type === Type.WAIT) {
+                childRef.current.onUpdatePlayers(data.payload);
+            } else if(data.type === Type.START) {
+                onChangeScreen(Screens.RUN_GAME);
+                // wip...
+                childRef.current.onUpdateBattleField(data.payload);
+            } else if(data.type === Type.UPDATE) {
+                childRef.current.onUpdateBattleField(data.payload);
+            }
+        });
+    }
+
+    const onStompError = () => {
+        stomp = null;
+        // wip: Alert something went wrong
+        setScreen(<StartScreen screenHandler={onChangeScreen}/>);
+    }
+
+    const onDisconnectWS = () => {
+        if(stomp) {
+            stomp.disconnect();
+            stomp = null;
         }
     }
 

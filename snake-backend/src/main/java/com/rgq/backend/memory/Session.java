@@ -1,25 +1,24 @@
 package com.rgq.backend.memory;
 
-import com.rgq.backend.sse.EventPublisher;
 import lombok.Getter;
 
 import java.util.ArrayList;
 
 @Getter
-public class Session {
-    private final EventPublisher publisher;
+public abstract class Session {
+    private final Channel channel;
     private final ArrayList<Player> players;
 
-    Session(EventPublisher publisher) {
-        this.publisher = publisher;
+    Session(Channel channel) {
+        this.channel = channel;
         this.players = new ArrayList<>();
     }
 
     Session(
-        EventPublisher publisher,
+        Channel channel,
         ArrayList<Player> players
     ) {
-        this.publisher = publisher;
+        this.channel = channel;
         this.players = players;
     }
 }
