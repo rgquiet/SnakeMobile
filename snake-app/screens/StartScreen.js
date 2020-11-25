@@ -1,6 +1,7 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, Text, Dimensions } from 'react-native';
+import { Dimensions, View, Image, TouchableOpacity, Text } from 'react-native';
 import Screens from './Screens';
+import Images from '../styles/Images';
 import Styles from '../styles/Global';
 
 const StartScreen = (props) => {
@@ -9,7 +10,7 @@ const StartScreen = (props) => {
         <View style={Styles.mainView}>
             <Image
                 style={{width: Dimensions.get('window').width * 0.8, height: Dimensions.get('window').height * 0.8}}
-                source={require('../assets/startscreen.jpg')}
+                source={Images.start}
             />
             <View style={{flexDirection: 'row'}}>
                 <TouchableOpacity

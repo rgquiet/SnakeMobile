@@ -1,4 +1,4 @@
-export const URL = 'http://192.168.1.254:8080/api/game';
+export const URL = 'http://192.168.1.254:8080/api/session';
 
 export async function postNewLobby(userName) {
     try {

@@ -4,7 +4,7 @@ import com.rgq.backend.dto.LobbyDTO;
 import com.rgq.backend.dto.PlayerDTO;
 import com.rgq.backend.memory.Lobby;
 import com.rgq.backend.memory.Session;
-import com.rgq.backend.service.GameService;
+import com.rgq.backend.service.SessionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +15,11 @@ import reactor.core.publisher.Flux;
 import java.util.ArrayList;
 
 @RestController
-@RequestMapping("/api/game")
-public class GameController {
-    private final GameService service;
+@RequestMapping("/api/session")
+public class SessionController {
+    private final SessionService service;
 
-    GameController(GameService service) {
+    SessionController(SessionService service) {
         this.service = service;
     }
 

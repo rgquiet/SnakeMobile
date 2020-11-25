@@ -16,7 +16,7 @@ public class Game extends Session {
     private final ArrayList<PowerUp> powerUps;
     private final Integer x = 16;
     private final Integer y = 10;
-    private Integer speed = 1000;
+    private Integer speed = 500;
 
     public Game(
         EventPublisher publisher,

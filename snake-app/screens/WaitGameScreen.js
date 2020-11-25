@@ -4,7 +4,7 @@ import { useStore, useDispatch } from 'react-redux';
 import { cleanAll } from '../store/PlayerAction';
 import LobbyDTO from '../helpers/LobbyDTO';
 import { postStartGame, postLeaveLobby, getAllPlayers } from '../helpers/Backend';
-import { getSkinImage } from '../styles/Images';
+import Images from '../styles/Images';
 import Styles from '../styles/Global';
 
 const WaitGameScreen = forwardRef((props, ref) => {
@@ -56,6 +56,18 @@ const WaitGameScreen = forwardRef((props, ref) => {
         });
     }
 
+    const onPlayerSkin = (skin) => {
+        if(skin === 'RED') {
+            return Images.red_head;
+        } else if(skin === 'GREEN') {
+            return Images.green_head;
+        } else if(skin === 'YELLOW') {
+            return Images.yellow_head;
+        } else if(skin === 'PURPLE') {
+            return Images.purple_head;
+        }
+    }
+
     return (
         <View style={[Styles.mainView, {justifyContent: 'center'}]}>
             <Text style={Styles.mainTitle}>Lobby: {store.getState().player.lobbyCode}</Text>
@@ -65,7 +77,7 @@ const WaitGameScreen = forwardRef((props, ref) => {
                         <View style={{flexDirection: 'row', marginVertical: 3}} key={i}>
                             <Image
                                 style={{width: 20, height: 26}}
-                                source={getSkinImage(player.skin)}
+                                source={onPlayerSkin(player.skin)}
                             />
                             <Text style={[Styles.mainText, {marginLeft: 10}]}>{player.userName}</Text>
                         </View>

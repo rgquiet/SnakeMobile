@@ -12,11 +12,11 @@ import java.util.HashMap;
 
 @Getter
 @Service
-public class GameService {
+public class SessionService {
     private final PlayerInitializer initializer;
     private final HashMap<String, Session> sessions;
 
-    GameService(PlayerInitializer initializer) {
+    SessionService(PlayerInitializer initializer) {
         this.initializer = initializer;
         this.sessions = new HashMap<>();
     }

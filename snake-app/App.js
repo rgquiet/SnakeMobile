@@ -23,26 +23,26 @@ const App = () => {
 
     const onChangeScreen = (screen) => {
         if(screen === Screens.NEW_GAME) {
-            onFinishSSE();
+            onDisconnectSSE();
             setScreen(<NewGameScreen screenHandler={onChangeScreen}/>);
         } else if(screen === Screens.JOIN_GAME) {
-            onFinishSSE();
+            onDisconnectSSE();
             setScreen(<JoinGameScreen screenHandler={onChangeScreen}/>);
         } else if(screen === Screens.WAIT_GAME) {
-            onStartSSE();
+            onConnectSSE();
             setScreen(<WaitGameScreen screenHandler={onChangeScreen} ref={childRef}/>);
         } else if(screen === Screens.RUN_GAME) {
-            onStartSSE();
+            onConnectSSE();
             setScreen(<GameScreen screenHandler={onChangeScreen} ref={childRef}/>);
         } else {
-            onFinishSSE();
+            onDisconnectSSE();
             setScreen(<StartScreen screenHandler={onChangeScreen}/>);
         }
     }
 
     const [screen, setScreen] = useState(<StartScreen screenHandler={onChangeScreen}/>);
 
-    const onStartSSE = () => {
+    const onConnectSSE = () => {
         if(!sse) {
             sse = new RNEventSource(URL + '/sub/' + store.getState().player.lobbyCode);
             sse.addEventListener('message', (event) => {
@@ -60,7 +60,7 @@ const App = () => {
         }
     }
 
-    const onFinishSSE = () => {
+    const onDisconnectSSE = () => {
         if(sse) {
             sse.removeAllListeners();
             sse.close();
