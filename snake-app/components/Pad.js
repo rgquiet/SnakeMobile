@@ -75,7 +75,7 @@ class Pad extends Component {
         const distance = Math.min(PAD_RADIUS, vectorSize(normalizedTouch));
         const angle = radiansBetweenPoints(center, touchPosition);
         const position = transformPosition({angle, distance});
-        const color = this.props.skin.toString().toLowerCase();
+        const color = this.props.skin.toLowerCase();
 
         this.angle = angle;
         this.speed = distance / PAD_RADIUS;

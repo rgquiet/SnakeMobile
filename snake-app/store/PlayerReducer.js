@@ -3,7 +3,7 @@ import { UPDATE_ALL, CLEAN_ALL } from './PlayerAction';
 const initialState = {
     host: false,
     userName: '',
-    skin: '',
+    skin: 'black',
     lobbyCode: '',
     maxPlayers: 0
 }

@@ -6,6 +6,7 @@ import com.rgq.backend.config.enums.Skin;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.LinkedList;
 import java.util.Queue;
 
 @Getter
@@ -21,7 +22,7 @@ public class Player {
     public Player(String userName, PlayerProperties properties) {
         this.userName = userName;
         this.skin = properties.getSkin();
-        this.position = properties.getPosition();
+        this.position = new LinkedList<>(properties.getPosition());
         this.direction = properties.getDirection();
         this.newDirection = properties.getDirection();
     }
