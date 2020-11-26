@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 import { MultiTouchView } from 'expo-multi-touch';
 import Pad from './Pad';
 import Direction from './Direction';
 
-export default class Joystick extends Component {
+class Joystick extends Component {
     firstTouchStart = {x: 0, y: 0};
     firstTouchPosition = {x: 0, y: 0};
     firstTouchForce = 0;
@@ -12,7 +13,6 @@ export default class Joystick extends Component {
     state = {
         touches: {},
         show: false,
-        // wip: Start direction shouldn't be empty
         direction: ''
     };
 
@@ -102,6 +102,7 @@ export default class Joystick extends Component {
                 <View style={styles.container}>
                     {this.props.children}
                     <Pad
+                        skin={this.props.skin}
                         visible={show}
                         center={this.firstTouchStart}
                         touchPosition={this.firstTouchPosition}
@@ -113,6 +114,12 @@ export default class Joystick extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {skin: state.player.skin};
+}
+
+export default connect(mapStateToProps)(Joystick);
 
 const styles = StyleSheet.create({
     container: {

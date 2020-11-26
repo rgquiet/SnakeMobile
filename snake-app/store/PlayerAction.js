@@ -1,8 +1,8 @@
 export const UPDATE_ALL = 'updateAll';
 export const CLEAN_ALL = 'cleanAll';
 
-export const updateAll = (payload, isHost) => {
-    return {type: UPDATE_ALL, lobbyDTO: payload, host: isHost};
+export const updateAll = (isHost, userName, data) => {
+    return {type: UPDATE_ALL, host: isHost, userName: userName, init: data};
 }
 
 export const cleanAll = () => {

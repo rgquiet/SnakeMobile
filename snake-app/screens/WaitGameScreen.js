@@ -84,7 +84,9 @@ const WaitGameScreen = forwardRef((props, ref) => {
                     ))}
                 </ScrollView>
             </View>
-            <Text style={Styles.mainText}>wip: Players ({players.length} / 4)</Text>
+            <Text style={Styles.mainText}>
+                Players ({players.length} / {store.getState().player.maxPlayers})
+            </Text>
             <TouchableOpacity
                 style={[Styles.mainButton, Styles.leftCorner]}
                 onPress={() => onQuitClick()}

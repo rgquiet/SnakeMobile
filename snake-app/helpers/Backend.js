@@ -5,7 +5,7 @@ export async function postNewLobby(userName) {
         let response = await fetch(URL + '/new/' + userName, {
             method: 'POST'
         });
-        return response.text();
+        return response.json();
     } catch(e) {
         console.error(e);
     }
@@ -18,7 +18,10 @@ export async function postJoinLobby(lobbyDTO) {
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(lobbyDTO)
         });
-        return response.status;
+        if(response.status === 200) {
+            return response.json();
+        }
+        return response.text();
     } catch(e) {
         console.error(e);
     }

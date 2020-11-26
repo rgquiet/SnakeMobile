@@ -1,5 +1,7 @@
 package com.rgq.backend.memory;
 
+import com.rgq.backend.dto.InitDTO;
+import com.rgq.backend.dto.LobbyDTO;
 import com.rgq.backend.sse.EventPublisher;
 import com.rgq.backend.config.PlayerInitializer;
 import com.rgq.backend.sse.EventType;
@@ -25,10 +27,10 @@ public class Lobby extends Session {
         this.host = userName;
     }
 
-    public ResponseEntity<String> addPlayer(String userName) {
+    public ResponseEntity<?> addPlayer(LobbyDTO dto) {
         int count = 0;
         for(Player player : getPlayers()) {
-            if(player.getUserName().equals(userName)) {
+            if(player.getUserName().equals(dto.getUserName())) {
                 return ResponseEntity
                     .status(HttpStatus.FORBIDDEN)
                     .body("username already taken");
@@ -37,7 +39,7 @@ public class Lobby extends Session {
         }
         try {
             getPlayers().add(new Player(
-                userName,
+                dto.getUserName(),
                 initializer.getProperties().get(count)
             ));
         } catch(IndexOutOfBoundsException e) {
@@ -49,7 +51,11 @@ public class Lobby extends Session {
             EventType.WAIT,
             getPlayers()
         ));
-        return ResponseEntity.ok("");
+        return ResponseEntity.ok(new InitDTO(
+            initializer.getProperties().get(count).getSkin(),
+            dto.getLobbyCode(),
+            initializer.getProperties().size()
+        ));
     }
 
     public void removePlayer(String userName) {

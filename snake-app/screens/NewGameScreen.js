@@ -3,7 +3,6 @@ import { Text } from 'react-native';
 import { useDispatch } from 'react-redux';
 import { updateAll } from '../store/PlayerAction';
 import { postNewLobby } from '../helpers/Backend';
-import LobbyDTO from '../helpers/LobbyDTO';
 import UserNameScreen from './UserNameScreen';
 import Screens from './Screens';
 import Styles from '../styles/Global';
@@ -13,7 +12,7 @@ const NewGameScreen = (props) => {
 
     const onCheckClick = (userName) => {
         postNewLobby(userName).then(data => {
-            dispatch(updateAll(new LobbyDTO(userName, data), true));
+            dispatch(updateAll(true, userName, data));
             props.screenHandler(Screens.WAIT_GAME);
         });
     }

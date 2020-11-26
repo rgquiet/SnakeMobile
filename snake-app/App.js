@@ -51,8 +51,7 @@ const App = () => {
                     childRef.current.onUpdatePlayers(data['payload']);
                 } else if(data['type'] === EventType.START) {
                     onChangeScreen(Screens.RUN_GAME);
-                    // wip...
-                    childRef.current.onUpdateBattleField(data['payload']);
+                    childRef.current.onStartGame(data['payload']);
                 } else if(data['type'] === EventType.UPDATE) {
                     childRef.current.onUpdateBattleField(data['payload']);
                 }

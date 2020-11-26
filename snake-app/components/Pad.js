@@ -11,7 +11,7 @@ const transformPosition = ({angle, distance}) => ({
     y: Math.sin(angle) * distance,
 });
 
-export default class Pad extends Component {
+class Pad extends Component {
     animatedValue = new Animated.Value(0);
     angle = 0;
     speed = 0;
@@ -75,6 +75,7 @@ export default class Pad extends Component {
         const distance = Math.min(PAD_RADIUS, vectorSize(normalizedTouch));
         const angle = radiansBetweenPoints(center, touchPosition);
         const position = transformPosition({angle, distance});
+        const color = this.props.skin.toString().toLowerCase();
 
         this.angle = angle;
         this.speed = distance / PAD_RADIUS;
@@ -83,6 +84,7 @@ export default class Pad extends Component {
             top: PAD_RADIUS + position.y - THUMB_RADIUS,
             left: PAD_RADIUS + position.x - THUMB_RADIUS,
             transform: [{scale: 1 + (force || 0) * 0.5}],
+            backgroundColor: color
         };
     }
 
@@ -99,13 +101,14 @@ export default class Pad extends Component {
     }
 }
 
+export default Pad;
+
 const styles = StyleSheet.create({
     container: {
         shadowColor: 'black',
         shadowRadius: 2,
         shadowOffset: {width: 0, height: 0},
         shadowOpacity: 0.5,
-
         position: 'absolute',
         alignItems: 'center',
         justifyContent: 'center',
@@ -120,8 +123,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         width: THUMB_RADIUS * 2,
         borderRadius: THUMB_RADIUS,
-        // wip: Set color from skin
-        backgroundColor: 'black',
         aspectRatio: 1
     }
 });

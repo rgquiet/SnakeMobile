@@ -4,13 +4,19 @@ import Images from '../styles/Images';
 import Joystick from '../components/Joystick';
 
 const GameScreen = forwardRef((props, ref) => {
-    const x = 16;
-    const y = 10;
-    const WIDTH = Dimensions.get('window').width / x;
-    const HEIGHT = Dimensions.get('window').height / y;
+    const [x, setX] = useState(1);
+    const [width, setWidth] = useState(Dimensions.get('window').width);
+    const [height, setHeight] = useState(Dimensions.get('window').height);
     const [battleField, setBattleField] = useState([]);
 
     useImperativeHandle(ref, () => ({
+
+        onStartGame(init) {
+            setX(init.x);
+            setWidth(width / init.x);
+            setHeight(height / init.y);
+            setBattleField(init.battleField);
+        },
 
         onUpdateBattleField(update) {
             setBattleField(update)
@@ -21,68 +27,68 @@ const GameScreen = forwardRef((props, ref) => {
         if(item === 'RED_HEAD') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.red_head}
                 />
             );
         } else if(item === 'RED_BODY') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.red_body}
                 />
             );
         } else if(item === 'GREEN_HEAD') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.green_head}
                 />
             );
         } else if(item === 'GREEN_BODY') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.green_body}
                 />
             );
         } else if(item === 'YELLOW_HEAD') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.yellow_head}
                 />
             );
         } else if(item === 'YELLOW_BODY') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.yellow_body}
                 />
             );
         } else if(item === 'PURPLE_HEAD') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.purple_head}
                 />
             );
         } else if(item === 'PURPLE_BODY') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.purple_body}
                 />
             );
         } else if(item === 'STAR') {
             return (
                 <Image
-                    style={{width: WIDTH, height: HEIGHT}}
+                    style={{width: width, height: height}}
                     source={Images.star}
                 />
             );
         }
-        return (<View style={{width: WIDTH, height: HEIGHT}}/>);
+        return (<View style={{width: width, height: height}}/>);
     }
 
     return (
@@ -92,10 +98,11 @@ const GameScreen = forwardRef((props, ref) => {
                 source={Images.ground}
             >
                 <FlatList
+                    key={x}
                     numColumns={x}
                     data={battleField}
-                    keyExtractor={(item, index) => index.toString()}
                     renderItem={renderItem}
+                    keyExtractor={(item, index) => index.toString()}
                 />
             </ImageBackground>
         </Joystick>

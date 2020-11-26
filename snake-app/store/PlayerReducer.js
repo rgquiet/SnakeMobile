@@ -1,16 +1,20 @@
 import { UPDATE_ALL, CLEAN_ALL } from './PlayerAction';
 
 const initialState = {
+    host: false,
     userName: '',
+    skin: '',
     lobbyCode: '',
-    host: false
+    maxPlayers: 0
 }
 
 const PlayerReducer = (state = initialState, action) => {
     if(UPDATE_ALL === action.type) {
-        state.userName = action.lobbyDTO.userName;
-        state.lobbyCode = action.lobbyDTO.lobbyCode;
         state.host = action.host;
+        state.userName = action.userName;
+        state.skin = action.init.skin;
+        state.lobbyCode = action.init.lobbyCode;
+        state.maxPlayers = action.init.maxPlayers;
     } else if(CLEAN_ALL === action.type) {
         return initialState;
     }

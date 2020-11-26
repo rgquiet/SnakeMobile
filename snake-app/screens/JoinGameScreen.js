@@ -18,14 +18,14 @@ const JoinGameScreen = (props) => {
 
     const onCheckClick = (userName) => {
         let lobbyDTO = new LobbyDTO(userName, lobbyCode);
-        postJoinLobby(lobbyDTO).then(status => {
-            // wip: Change status handling
-            if(status === 200) {
-                dispatch(updateAll(lobbyDTO, false));
-                props.screenHandler(Screens.WAIT_GAME);
-            } else {
-                console.log(status);
+        postJoinLobby(lobbyDTO).then(data => {
+            if(typeof data === 'string') {
+                // wip: Show alert
+                console.log(data);
                 props.screenHandler();
+            } else {
+                dispatch(updateAll(false, userName, data));
+                props.screenHandler(Screens.WAIT_GAME);
             }
         });
     }

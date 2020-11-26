@@ -1,5 +1,6 @@
 package com.rgq.backend.controller;
 
+import com.rgq.backend.dto.InitDTO;
 import com.rgq.backend.dto.LobbyDTO;
 import com.rgq.backend.dto.PlayerDTO;
 import com.rgq.backend.memory.Lobby;
@@ -33,15 +34,15 @@ public class SessionController {
     }
 
     @PostMapping("/new/{userName}")
-    public String newLobby(@PathVariable String userName) {
+    public InitDTO newLobby(@PathVariable String userName) {
         return service.generateLobbyCode(userName);
     }
 
     @PostMapping("/join")
-    public ResponseEntity<String> joinLobby(@RequestBody LobbyDTO dto) {
+    public ResponseEntity<?> joinLobby(@RequestBody LobbyDTO dto) {
         Session session = service.getSessions().get(dto.getLobbyCode());
         if(session instanceof Lobby) {
-            return ((Lobby) session).addPlayer(dto.getUserName());
+            return ((Lobby) session).addPlayer(dto);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("invalid lobby code");
     }

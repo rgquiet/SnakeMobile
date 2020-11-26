@@ -1,5 +1,6 @@
 package com.rgq.backend.service;
 
+import com.rgq.backend.dto.InitDTO;
 import com.rgq.backend.memory.Game;
 import com.rgq.backend.sse.EventPublisher;
 import com.rgq.backend.config.PlayerInitializer;
@@ -21,19 +22,17 @@ public class SessionService {
         this.sessions = new HashMap<>();
     }
 
-    public String generateLobbyCode(String userName) {
-        String lobbyCode = "";
+    public InitDTO generateLobbyCode(String userName) {
         String charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         int length = 5;
-        boolean unique = false;
-        while(!unique) {
+        while(true) {
             // Generates a random lobby code
             StringBuilder generated = new StringBuilder(length);
             for(int i = 0; i < length; i++) {
                 int index = (int)(charset.length() * Math.random());
                 generated.append(charset.charAt(index));
             }
-            lobbyCode = generated.toString();
+            String lobbyCode = generated.toString();
             // Check if lobby code is already in use
             Session session = sessions.get(lobbyCode);
             if(session == null) {
@@ -42,10 +41,13 @@ public class SessionService {
                     initializer,
                     userName
                 ));
-                unique = true;
+                return new InitDTO(
+                    initializer.getProperties().get(0).getSkin(),
+                    lobbyCode,
+                    initializer.getProperties().size()
+                );
             }
         }
-        return lobbyCode;
     }
 
     public void changeLobbyToGame(String userName, String lobbyCode) {

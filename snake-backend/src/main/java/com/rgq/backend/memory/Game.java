@@ -2,6 +2,7 @@ package com.rgq.backend.memory;
 
 import com.rgq.backend.config.enums.Direction;
 import com.rgq.backend.config.enums.Field;
+import com.rgq.backend.dto.GameDTO;
 import com.rgq.backend.sse.EventPublisher;
 import com.rgq.backend.sse.EventType;
 import com.rgq.backend.sse.SessionEvent;
@@ -16,7 +17,7 @@ public class Game extends Session {
     private final ArrayList<PowerUp> powerUps;
     private final Integer x = 16;
     private final Integer y = 10;
-    private Integer speed = 500;
+    private Integer speed = 5000;
 
     public Game(
         EventPublisher publisher,
@@ -28,8 +29,7 @@ public class Game extends Session {
         // Send game start event
         publisher.publishEvent(new SessionEvent(
             EventType.START,
-            getBattleField()
-            // wip: Add game constants like x, y etc.
+            new GameDTO(getBattleField(), x, y)
         ));
         // Update game each interval
         Runnable task = this::update;
